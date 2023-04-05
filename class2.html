@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3 id="show">show</h3>
+    <h3 id="show2">show</h3>
+    <script>
+        let arr = ["dan", "bolu", "mant"];
+        let display = document.getElementById("show");
+        let show = document.getElementById("show2");
+        display.innerHTML = arr;
+        show.innerHTML = arr.shift()
+    </script>
+</body>
+</html>
