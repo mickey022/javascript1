@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pword{
+            border: 1px solid rgb(199, 48, 48);
+            height: 200px;
+            width: 200px;
+            padding: 30px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" name="" id="display">
+    <button id="btn" onclick="show()">Hello</button>
+    <p id="screen"></p>
+
+    <h4 id="yum"></h4>
+
+    <div class="pword">
+        <input type="password" id="king"><br>
+        <button id="sho" onclick="clickMe()">show</button>
+
+        <input type="password" id="kin"><br>
+       <button id="home" onclick="click()">show</button>
+<br>
+<br>
+
+       <button id="toVerify" onclick="verify()">verify</button>
+    </div>
+
+    <script>
+        let display = document.getElementById("display");
+        let screen = document.getElementById("screen");
+        let btn = document.getElementById("btn");
+
+
+        function show() {
+            screen.innerHTML = display.value;
+            display.value = btn.innerHTML;
+        }
+
+
+        let App = document.getElementById("yum")
+       function myfunctiom(p1,p2){
+        return 2 * 4
+       }
+App.innerHTML = myfunctiom()
+
+           let input1 = document.getElementById('king');
+           function clickMe(){
+            if (input1.type === 'password'){
+                input1.type = 'text'
+                document.getElementById('sho').innerHTML = 'hide'
+            }else{
+                input1.type = 'password'
+                document.getElementById('sho').innerHTML = 'show'
+            }
+           }
+
+
+           let input2 = document.getElementById('kin');
+           function click(){
+            if (document.getElementById('kin').type === 'password') {
+                document.getElementById('kin').type = 'text'
+                document.getElementById('home').innerHTML = 'hide'
+            }else{
+                document.getElementById('kin').type = 'password'
+                document.getElementById('home').innerHTML = 'show'
+            }
+           }
+
+
+    </script>
+</body>
+</html>

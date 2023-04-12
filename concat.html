@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="name">Surname firstName, lastName</p>
+    <input type="text" id="display1">
+    <input type="text" id="display2">
+    <input type="text" id="display3">
+    <p id="incr">increment</p>
+    <button onclick="increment()">increment</button>
+    <button onclick="decrement()">decrement</button>
+
+    <button onclick= "verify()">clickme</button>
+
+    
+</body>
+<script>
+       function verify(){
+         let Name, Display, Display2, Display3
+         Name = document.getElementById("name");
+         
+         
+         Display = document.getElementById("display1").value;
+         Display2 = document.getElementById("display2").value;
+         Display3 = document.getElementById("display3").value;
+         
+         Name.innerHTML = Display + " "  + Display2 + " " + Display3
+       }
+        let Sum = 0;
+        let summation;
+       function increment(){
+            summation = document.getElementById("incr")
+            Sum = Sum + 1;
+            summation.innerText = Sum;
+       }
+       function decrement(){
+        let decrease;
+        decrease = document.getElementById("incr");
+        Sum = Sum - 1
+        decrease.textContent = Sum
+       }
+</script>
+</html>

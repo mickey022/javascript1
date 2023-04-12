@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn button{
+            border: 0px solid black;
+            border-radius: 10px;
+            width: 80px;
+            height: 50px;
+            background-color: blue;
+            color: white;
+        }
+        .sign{
+            margin-top: 5px;
+            padding: 2px;
+        }
+        .sign input{
+            width: 300px;
+            height: 40px;
+            border-radius: 20px;
+            border: 0;
+        }
+        .log{
+            margin-top: 5px;
+            padding: 2px;
+        }
+        .log input{
+            width: 300px;
+            height: 40px;
+            border-radius: 20px;
+            border: 0px;
+        }
+        .fb{
+            border: 0px solid black;
+            border-radius: 10px;
+            width: 390px;
+            height: 540px;
+            margin: auto;
+            padding: 5px;
+            background-color: cornflowerblue;
+        
+        }
+        #pres{
+            width: 150px;
+            height: 50px;
+            background-color: rgb(106, 250, 106);
+            border: 0;
+            border-radius: 10px;
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+            margin-top: 4px;
+            margin-left: 20px;
+        }
+        #loginto{
+            width: 150px;
+            height: 50px;
+            background-color: rgb(106, 250, 106);
+            border: 0;
+            border-radius: 10px;
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+            margin-top: 4px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="display">
+    <button onclick="add()">Add</button>
+    <h1 id="show">Show</h1>
+
+
+    <div class="fb">
+       <div class="btn"> 
+        <button onclick="press()" id="pre">Sign up</button>
+        <button onclick="verify()" id="login">Log In</button></div>
+
+       <div class="sign" id="sign"> 
+        <label for=""><h3>Name:</h3></label>
+        <input type="text" id="name">
+        <br>
+        <label for=""><h3>Email:</h3></label>
+        <input type="text" id="birth">
+        <br>
+        <label for=""><h3>Password:</h3></label>
+        <input type="text" id="pass">
+        <br>
+        <label for=""><h3>Confirm Password:</h3></label>
+        <input type="text" id="pass2">
+    
+    <button onclick="enter(event)" id="pres">SIGN UP</button>
+    </div>
+
+
+        <div class="log" id="log">
+            <label for=""><h3>Username or Phone No:</h3></label>
+            <input type="text">
+            <br>
+            <label for=""><h3>Password:</h3></label>
+            <input type="text">
+            <button onclick="allow()" id="loginto">LOG IN</button>
+        </div>
+    </div>
+</body>
+<script>
+let Display
+Display = document.getElementById("display")
+    function add(){
+localStorage.setItem("count", Display.value);
+    }
+    function get(){
+        let gotten = localStorage.getItem("count");
+        console.log(gotten);
+        document.getElementById("show").innerHTML = gotten;
+    }
+    get();
+
+    document.getElementById("login").style.backgroundColor = "red"    
+document.getElementById("log").style.display = "none"
+function press(){
+    document.getElementById("pre").style.display = "initial"
+    document.getElementById("log").style.display = "none"
+    document.getElementById("sign").style.display = "block"
+}
+function verify(){
+    document.getElementById("pre").style.display = "initial"
+    document.getElementById("log").style.display = "block"
+    document.getElementById("sign").style.display = "none"
+}
+
+
+let Name, Birth, Pass, Pass2
+let added = []
+Name = document.getElementById("name").value;
+Email = document.getElementById("birth").value;
+Pass = document.getElementById("pass").value;
+Pass2 = document.getElementById("pass2").value;
+
+function enter(){
+let data = {
+    name : Name.value,
+    email : Email.value,
+    pass : Pass.value,
+    pass2 : Pass2.value
+
+}
+added.push(data)
+localStorage.setItem("user", added)
+}
+
+
+</script>
+</html>

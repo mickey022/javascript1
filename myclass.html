@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul>
+        <li>vegetabe</li>
+        <li>Fruit</li>
+    </ul>
+    <p id="Answer">Answer</p>
+    <input type="text" id="Radius">
+    <button onclick="area()">Show Radius</button>
+
+   <p id="name_id">Name : </p>
+   <input type="text" name="" id="inp">
+   <button onclick="display()">Show</button>
+   <script> 
+        function area(){
+        let radius, ans;  
+        const p = 3.142;
+        radius = document.getElementById("Radius").value; 
+        ans = document.getElementById("Answer");
+       let poop = p *radius*radius
+       ans.innerHTML = poop
+    } 
+
+        function display(){
+            let Name, input;
+            Name = document.getElementById("name_id");
+            input = document.getElementById("inp").value;
+           Name.textContent = input
+
+        }
+
+
+        let myAge = 30;
+    </script>
+    
+</body>
+</html>
