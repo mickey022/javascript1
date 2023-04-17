@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     .parent{
+        border: 1px solid black;
+        width: 700px;
+        height: 600px;
+        margin: auto;
+        padding: 40px;
+        color: white;
+        background-color: red;
+     }
+     .parent input{
+        width: 290px;
+        height: 60px;
+        border: 0;
+     }
+     .parent button{
+        border: 0;
+        width: 100px;
+        height: 30px;
+        background-color: whitesmoke;
+     }
+    </style>
+</head>
+<body>
+    <div class="parent">
+    <h1>Welcome to State Bank of India</h1>
+    <h2 id="show">45000</h2>
+    <input type="text" id="unit"  placeholder="Enter your 4 digit pin number">
+    <br>
+    <br>
+    <input type="text" id="cash" placeholder="Amount">
+    <br>
+    <br>
+
+    <button onclick="enter()">Click Me</button>
+    <br>
+    <br>
+    <button id="amount" onclick="verify()">Amount</button>
+</div>
+</body>
+<script>
+let sum = 45000
+let User, Show, Amount, Cash
+User = document.getElementById("unit");
+Cash = document.getElementById("cash");
+Show = document.getElementById("show");
+Amount = document.getElementById("amount");
+function enter(){
+    if (User.value === "1234") {
+        alert("1-withdraw")        
+        alert("2-balance enquiry")
+        alert("3-fast cash")
+    }else{
+        alert("Incorrect pin")
+    }
+}
+
+function usersChoice(choice) {
+    if (choice === "1") {
+        withdraw();
+    } else if (choice === "2") {
+        balance();
+    } else if (choice === "3") {
+        deposit()
+    }
+    else {
+        alert("wrong choice")
+    }
+      
+}
+function verify(){
+    sum = sum - Cash.value;
+    console.log(sum);
+    Show.innerHTML = sum;
+
+    if (sum === 45000) {
+        alert("Sufficient Cash")
+    }
+    if (sum <= 45000) {
+        alert("Please take your Cash")
+    }
+    if (sum <= 0) {
+        alert("Invalid Cash")
+    }
+    
+
+}
+
+function withdraw(amount) {
+    alert("Please enter the amount you want to withdraw");
+
+}
+
+function balance() {
+    
+}
+
+function deposit(amount) {
+    
+}
+
+
+</script>
+</html>

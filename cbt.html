@@ -14,4 +14,107 @@
     <button onclick="next()">Next</button>
     <button onclick="sub()">Submit</button>
 </body>
+<script>
+    let Disp_que = document.getElementById("disp_Que");
+    let queCount = 0;
+    let myAns = [];
+    let score = 0;
+    let cbt = [
+        {
+            Que: "The highest mountain in Africa is?",
+            opt: ["kilimanjaro", "Everest", "stanley"],
+            ans: "kilimanjaro"
+        },
+
+        {
+            Que: "Who invented computer?",
+            opt: ["Elon", "Charles", "Johm"],
+            ans: "Charles"
+        },
+
+        {
+            Que: "Country with the largest population?",
+            opt: ["Nigeria", "China", "Tailand"],
+            ans: "China"
+        },
+
+        {
+            Que: "The longest river is?",
+            opt: ["River nile", "River Euphrate", "River "],
+            ans: "River nile"
+        },
+
+        {
+            Que: "The Largest country is?",
+            opt: ["Russia", "Mexico", "Australia"],
+            ans: "Russia"
+        },
+
+        {
+            Que: "The Country with most natural lakes?",
+            opt: ["Jamaica", "Portugal", "Canada"],
+            ans: "Canada"
+        },
+
+        {
+            Que: "The capital of Nova Scotia is?",
+            opt: ["Halifax", "Niger", "Libya"],
+            ans: "Halifax"
+        }
+    ]
+
+    function showQue(){
+        Disp_que.innerHTML = `<h1>${queCount+1+". "} ${cbt[queCount].Que}</h1>`
+
+        Disp_que.innerHTML = "<h1>"+ (queCount+1)+". "+  cbt[queCount].Que + "</h1>"
+
+        // cbt[queCount].opt.forEach((el, i)=>{
+        //     Disp_que.innerHTML += `
+        //    <div>
+        //         <input value = '${el}' name="dd${queCount}" type = 'radio'/>
+        //         <span>${el}</span>
+        //     </div>
+        //     `
+        // });
+        for (let index = 0; index < cbt[queCount].opt.length; index++) {
+            Disp_que.innerHTML += `
+            <div>
+                 <input value = '${cbt[queCount].opt[index]}' name="dd${queCount}" type = 'radio'/>
+                 <span>${cbt[queCount].opt[index]}</span>
+             </div>
+             `
+            
+        }
+        pickAns();
+    }
+    showQue();
+
+    function next(){
+        queCount++;
+        showQue()
+    };
+    function prev(){
+        queCount--;
+        showQue()
+    }
+    function pickAns(){
+     let radio = document.getElementsByName("dd" + queCount);
+     radio.forEach((el, i) => {
+        el.onclick = () => {
+            myAns[queCount] = el.value;
+            myAns[queCount].checked = true;
+            console.log(myAns);
+        }
+     });   
+    }
+
+    function sub(params) {
+        cbt.forEach((el, i) => {
+            if (cbt[i].ans == myAns[i]){
+                score += 1
+            }
+        })
+        alert("your score is" + score + "out of" + cbt.length)
+    }
+</script>
 </html>

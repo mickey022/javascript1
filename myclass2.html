@@ -11,7 +11,15 @@
    <button onclick="verify()">click</button>
    <button onclick="pick()">click</button>
 
+<p id="dim"></p>
+<button onclick="feet()">clickMe</button>
 
+
+<h1>BlackJack</h1>
+<p>Do you want draw new cards</p>
+<h3 id="card"></h3>
+<button>Start Game</button>
+<button>New Card</button>
 </body>
 
 <script>
@@ -30,8 +38,23 @@ function pick(){
   sum = sum - 1
   console.log(sum);
   Show.innerHTML = sum
-
 }
+
+for (let count = 10; count < 21; count++) {
+  console.log(count);
+  
+}
+
+let King 
+King = document.getElementById("dim");
+let sentence = ["I", "am", "a", "developer"];
+
+function feet(){
+  for (let i = 0; i < sentence.length; i++) {
+   King.innerHTML += sentence[i] + " "
+}
+}
+
 
 </script>
 </html>
