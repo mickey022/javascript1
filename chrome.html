@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.emp{
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: steelblue;
+    width: 600px;
+    height: 600px;
+}
+.emp input{
+    width: 500px;
+    height: 70px;
+    padding: 20px;
+    margin-top: 40px;
+}
+    </style>
+</head>
+<body>
+    <div class="emp"><input type="text" id="input-el">
+        <br>
+        <br>
+    <button id="btn" onclick="saveLead()">SAVE</button>
+    <ul id="show"></ul>
+    </div>
+
+    <div id="container"></div>
+</body>
+<script>
+    let myLead = []
+    let Input, Press, Show
+    Input = document.getElementById("input-el");
+    Press = document.getElementById("btn")
+    Show = document.getElementById("show")
+
+    // push to the array
+function saveLead(){
+    myLead.push(Input.value);
+    console.log(myLead);
+    Input.value = " "
+    renderLead()
+
+    // displaying all arrays
+//     for (let i = 0; i < myLead.length; i++) {
+//     console.log(myLead[i])
+//     Show.innerHTML += myLead[i] + " "
+// }
+ 
+// To add <li> to the list array 
+// for (let i = 0; i < myLead.length; i++) {
+//     Show.innerHTML = "<li>" + myLead[i] + "<li>"
+    
+// }
+
+// let listItems  = " "
+// for (let i = 0; i < myLead.length; i++) {
+//     listItems  += "<li>" + myLead[i] + "<li>"
+// }
+// Show.innerHTML = listItems
+}
+
+
+// calling the render 
+function renderLead(){
+    let listItems  = " "
+for (let i = 0; i < myLead.length; i++) {
+    listItems  += "<li>" + myLead[i] + "</li>"
+}
+Show.innerHTML = listItems
+}
+
+
+let Container = document.getElementById("container");
+Container.innerHTML = "<button onclick = 'buy()'>Buy</button>"
+
+function buy(){
+    Container.innerHTML  += "<p>Thank you for patronising</p>"
+}
+
+  
+</script>
+</html>

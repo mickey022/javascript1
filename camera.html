@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cam {
+            border: 1px solid black;
+            border-radius: 20px;
+            background-color: red;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cam">
+        <video src="" id="video" width="500" height="500" autoplay></video>
+        <button onclick="startCam()">CAMERA</button>
+    </div>
+</body>
+<script>
+    let Video = document.getElementById("video")
+
+    async function startCam() {
+        let theCam = await navigator.mediaDevices.getUserMedia({ audio: false, video: true })
+        Video.srcObject = theCam;
+    }
+</script>
+
+</html>

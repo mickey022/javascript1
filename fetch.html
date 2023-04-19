@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .Tableroll{
+            margin-top: 30px;
+            margin-left: 300px;        }
+    </style>
+</head>
+<body>
+    <select name="" id="theCountries">Countries</select>
+
+    <div class="Tableroll">
+        <table>
+            <thead>
+                <tbody>
+                    <th>S/N</th>
+                    <th>Names of Countries</th>
+                    <th>Capital</th>
+                    <th>Population</th>
+                    <th>Language</th>
+                    <th>Independent</th>
+                </tbody>
+            </thead>
+        </table>
+    </div>
+
+
+  
+</body>
+<script>
+    // function showThis(){
+    //     fetch("https://restcountries.com/v3.1/all").then((dan)=> dan.json()).then((res)=>{
+    //         console.log(res);
+
+    //         res.forEach(element => {
+    //        let contName = element.name.common
+    //        console.log(contName); 
+    //        theCountries.innerHTML  +=`
+    //        <option>${contName}</option>
+    //        `
+    //     })
+        
+    //     });
+    // }
+    // showThis()
+
+    // or
+
+    async function dispCont(){
+        let allCont = await fetch("https://restcountries.com/v3.1/all")
+        let result = await allCont.json()
+        console.log(result);
+      result.forEach(element => {
+        theCountries.innerHTML  +=`
+            <option>${element.name.common}</option>
+           `
+      });
+       
+    }
+    dispCont()
+</script>
+</html>
