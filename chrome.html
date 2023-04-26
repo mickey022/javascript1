@@ -15,9 +15,20 @@
 }
 .emp input{
     width: 500px;
-    height: 70px;
+    height: 20px;
     padding: 20px;
     margin-top: 40px;
+}
+ul{
+    list-style: none;
+}
+li{
+    border: 1px solid black;
+    height: 30px;
+    width: 400px;
+    background-color: white;
+    margin-top: 10px;
+
 }
     </style>
 </head>
@@ -38,7 +49,7 @@
     Press = document.getElementById("btn")
     Show = document.getElementById("show")
 
-    // push to the array
+  // push to the array
 function saveLead(){
     myLead.push(Input.value);
     console.log(myLead);
